@@ -103,7 +103,7 @@ export function Sidebar({ onNavClick }: SidebarProps) {
             DB
           </div>
           <div className="flex flex-col flex-1 overflow-hidden">
-            <span className="text-sm font-bold text-white truncate leading-tight">DevBlazee</span>
+            <span className="text-sm font-bold text-white truncate leading-tight">DevBlaze</span>
             <span className="text-[10px] font-medium text-slate-500 truncate uppercase tracking-wider">System Owner</span>
           </div>
           <Settings size={14} className="text-slate-600 group-hover:text-white transition-colors" />
