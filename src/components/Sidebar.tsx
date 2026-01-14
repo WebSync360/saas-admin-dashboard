@@ -39,7 +39,8 @@ interface SidebarProps {
 
 export function Sidebar({ onNavClick }: SidebarProps) {
   return (
-    <aside className="flex min-h-screen w-full flex-col bg-brand-charcoal border-r border-white/5">
+    /* h-full and flex-col are essential here to make the 'mt-auto' work below */
+    <aside className="flex h-full w-full flex-col bg-brand-charcoal border-r border-white/5 overflow-hidden">
       
       {/* 1. Brand Logo & Mobile Close */}
       <div className="flex h-24 items-center justify-between px-8 shrink-0">
@@ -57,7 +58,7 @@ export function Sidebar({ onNavClick }: SidebarProps) {
         </button>
       </div>
 
-      {/* 2. Navigation Area */}
+      {/* 2. Navigation Area - flex-1 grows to fill all available vertical space */}
       <nav className="flex-1 px-4 space-y-8 mt-4 overflow-y-auto custom-scrollbar">
         {navigation.map((section) => (
           <div key={section.group}>
@@ -96,7 +97,7 @@ export function Sidebar({ onNavClick }: SidebarProps) {
         ))}
       </nav>
 
-      {/* 3. Bottom Profile Section */}
+      {/* 3. Bottom Profile Section - mt-auto pins this to the very bottom */}
       <div className="mt-auto shrink-0 border-t border-white/5 bg-black/20 p-4 pb-8 lg:pb-4">
         <div className="flex items-center gap-3 px-3 py-4 rounded-2xl hover:bg-white/5 transition-colors cursor-pointer group">
           <div className="h-10 w-10 rounded-xl bg-gradient-to-tr from-brand-red to-red-400 flex items-center justify-center text-white font-black text-sm shadow-lg">

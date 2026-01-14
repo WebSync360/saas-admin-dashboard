@@ -18,7 +18,7 @@ function App() {
 
   return (
     <Router>
-      {/* h-screen forces the main container to exactly fit the monitor height */}
+      {/* 1. h-screen is the 'Global Lock'. It prevents the body from growing longer than the screen. */}
       <div className="flex h-screen w-full bg-brand-ash overflow-hidden relative">
         
         {/* MOBILE OVERLAY */}
@@ -29,7 +29,7 @@ function App() {
           />
         )}
 
-        {/* SIDEBAR WRAPPER: Changed to h-full to force bottom contact */}
+        {/* 2. SIDEBAR WRAPPER: Must be h-full to reach the bottom. */}
         <div className={`
           fixed inset-y-0 left-0 z-50 w-64 h-full shrink-0 transform transition-transform duration-300 ease-in-out lg:relative lg:translate-x-0
           ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"}
@@ -37,7 +37,7 @@ function App() {
           <Sidebar onNavClick={() => setIsSidebarOpen(false)} />
         </div>
         
-        {/* MAIN CONTENT AREA */}
+        {/* 3. MAIN CONTENT AREA: flex-col + h-full allows the inner div to scroll. */}
         <main className="flex-1 flex flex-col min-w-0 h-full overflow-hidden">
           
           {/* MOBILE TOP BAR */}
@@ -56,7 +56,7 @@ function App() {
             </button>
           </div>
 
-          {/* SCROLLABLE CONTENT */}
+          {/* 4. DASHBOARD AREA: This is the only part that should scroll. */}
           <div className="flex-1 overflow-y-auto overflow-x-hidden">
             <Routes>
               <Route path="/" element={<Dashboard />} />
