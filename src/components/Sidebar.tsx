@@ -39,7 +39,7 @@ interface SidebarProps {
 
 export function Sidebar({ onNavClick }: SidebarProps) {
   return (
-    <aside className="flex h-screen w-full flex-col bg-brand-charcoal border-r border-white/5">
+    <aside className="flex min-h-screen w-full flex-col bg-brand-charcoal border-r border-white/5">
       
       {/* 1. Brand Logo & Mobile Close */}
       <div className="flex h-24 items-center justify-between px-8 shrink-0">
