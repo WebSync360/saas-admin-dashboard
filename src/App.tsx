@@ -18,9 +18,10 @@ function App() {
 
   return (
     <Router>
+      {/* h-screen forces the main container to exactly fit the monitor height */}
       <div className="flex h-screen w-full bg-brand-ash overflow-hidden relative">
         
-        {/* MOBILE OVERLAY (Darkens background when sidebar is open) */}
+        {/* MOBILE OVERLAY */}
         {isSidebarOpen && (
           <div 
             className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm lg:hidden transition-opacity"
@@ -28,9 +29,9 @@ function App() {
           />
         )}
 
-        {/* SIDEBAR: Fixed on mobile, relative on desktop. Always h-screen. */}
+        {/* SIDEBAR WRAPPER: Changed to h-full to force bottom contact */}
         <div className={`
-          fixed inset-y-0 left-0 z-50 w-64 transform transition-transform duration-300 ease-in-out lg:relative lg:translate-x-0
+          fixed inset-y-0 left-0 z-50 w-64 h-full shrink-0 transform transition-transform duration-300 ease-in-out lg:relative lg:translate-x-0
           ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"}
         `}>
           <Sidebar onNavClick={() => setIsSidebarOpen(false)} />
@@ -39,7 +40,7 @@ function App() {
         {/* MAIN CONTENT AREA */}
         <main className="flex-1 flex flex-col min-w-0 h-full overflow-hidden">
           
-          {/* MOBILE TOP BAR (Hidden on Desktop) */}
+          {/* MOBILE TOP BAR */}
           <div className="lg:hidden flex items-center justify-between px-6 h-20 bg-brand-charcoal border-b border-white/5 shrink-0">
             <div className="flex items-center gap-2">
               <div className="h-8 w-8 bg-brand-red rounded-lg flex items-center justify-center rotate-45">
@@ -55,8 +56,8 @@ function App() {
             </button>
           </div>
 
-          {/* SCROLLABLE DASHBOARD AREA */}
-          <div className="flex-1 overflow-y-auto">
+          {/* SCROLLABLE CONTENT */}
+          <div className="flex-1 overflow-y-auto overflow-x-hidden">
             <Routes>
               <Route path="/" element={<Dashboard />} />
               <Route path="/users" element={<PagePlaceholder title="User Management" />} />
