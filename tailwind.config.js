@@ -8,12 +8,15 @@ export default {
     extend: {
       colors: {
         brand: {
-          ash: '#F1F5F9',       // App background / light grey
-          surface: '#FFFFFF',   // Cards / panels
-          slate: '#475569',     // Primary text / muted UI
-          charcoal: '#0F172A',  // Sidebar / headings / deep background
-          red: '#DC2626',       // Accent (icons, stats, active states)
+          ash: '#F8FAFC',       // Cleaner, more modern light grey
+          surface: '#FFFFFF',
+          slate: '#64748B',     // Sophisticated muted text
+          charcoal: '#0F172A',  // Deep professional navy/black
+          red: '#E11D48',       // Slightly more vibrant "premium" red
         }
+      },
+      boxShadow: {
+        'premium': '0 4px 20px -2px rgba(0, 0, 0, 0.05), 0 2px 10px -1px rgba(0, 0, 0, 0.03)',
       }
     },
   },
