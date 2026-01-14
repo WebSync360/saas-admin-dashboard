@@ -67,7 +67,7 @@ export default function Dashboard() {
           <p className="text-sm md:text-base text-slate-500 font-medium mt-1">Real-time status of Axiom.</p>
         </div>
         <button className="w-full sm:w-auto px-5 py-3 bg-brand-charcoal text-white rounded-xl text-sm font-bold shadow-lg hover:bg-black transition-all flex items-center justify-center gap-2">
-          <Zap size={16} className="text-brand-red fill-brand-red" /> Upgrade Plan
+          <Zap size={16} className="text-brand-red fill-brand-red" /> Upgrade Plan.
         </button>
       </div>
 
