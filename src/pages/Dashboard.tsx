@@ -9,7 +9,7 @@ import {
   type LucideIcon
 } from 'lucide-react';
 import { 
-  BarChart, Bar, XAxis, YAxis, CartesianGrid, 
+  BarChart, Bar, XAxis, CartesianGrid, 
   Tooltip, ResponsiveContainer, PieChart, Pie, Cell 
 } from 'recharts';
 
